@@ -7,9 +7,9 @@ public class UserSmallDetailsDTO {
     private boolean mastermind;
 
     public UserSmallDetailsDTO(String username, String dateCreated, boolean mastermind) {
-        this.username = username;
-        this.dateCreated = dateCreated;
-        this.mastermind = mastermind;
+        setUsername(username);
+        setDateCreated(dateCreated);
+        setMastermind(mastermind);
     }
 
     public String getUsername() {

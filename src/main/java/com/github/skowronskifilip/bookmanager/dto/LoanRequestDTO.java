@@ -5,7 +5,7 @@ public class LoanRequestDTO {
     private int bookId;
 
     public LoanRequestDTO(int bookId) {
-        this.bookId = bookId;
+        setBookId(bookId);
     }
 
     public int getBookId() {

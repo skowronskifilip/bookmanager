@@ -42,7 +42,7 @@ public class JwtServiceImpl implements JwtService {
                 .add(claims)
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 60 * 60 * 1000)) // jedna godzina
+                .expiration(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
                 .and()
                 .signWith(getKey())
                 .compact();
@@ -76,11 +76,11 @@ public class JwtServiceImpl implements JwtService {
     }
 
     private Claims extractAllClaims(String token) throws SecurityException {
-        return Jwts.parser() // to dziala DOBRZE!!!!
-                .verifyWith(getKey()) // to dziala DOBRZE!!!!
-                .build() // to dziala DOBRZE!!!!
-                .parseSignedClaims(token) // to dziala DOBRZE!!!!
-                .getPayload(); // to dziala DOBRZE!!!!
+        return Jwts.parser()
+                .verifyWith(getKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
     }
 
     private Date extractExpiration(String token) {

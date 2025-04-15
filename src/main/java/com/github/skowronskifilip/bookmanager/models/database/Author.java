@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 import java.sql.Date;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -66,7 +67,7 @@ public class Author {
     }
 
     public List<Book> getBooks() {
-        return books;
+        return Collections.unmodifiableList(books);
     }
 
     public void setBooks(List<Book> books) {

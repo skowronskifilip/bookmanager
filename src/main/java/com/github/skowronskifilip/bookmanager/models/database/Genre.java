@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -51,7 +52,7 @@ public class Genre {
     }
 
     public List<Book> getBooks() {
-        return books;
+        return Collections.unmodifiableList(books);
     }
 
     public void setBooks(List<Book> books) {

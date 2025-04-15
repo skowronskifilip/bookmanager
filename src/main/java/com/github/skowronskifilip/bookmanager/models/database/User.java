@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.sql.Timestamp;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -81,7 +82,7 @@ public class User {
     }
 
     public List<Loan> getLoans() {
-        return loans;
+        return Collections.unmodifiableList(loans);
     }
 
     public void setLoans(List<Loan> loans) {
